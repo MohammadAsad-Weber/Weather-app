@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: url(https://static.vecteezy.com/system/resources/thumbnails/008/035/296/small_2x/blurred-backgrounds-blur-abstract-backgrounds-beautiful-and-bright-abstract-backgrounds-are-used-for-creative-decorations-free-photo.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+#wrapper{
+    padding: 0;
+
+    border: none;
+    border-radius: 15px;
+    box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+#container {
+    height: 400px;
+    width: 300px;
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border: none;
+    border-radius: 15px;
+}
+
+#container #InputArea {
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(235, 235, 235);
+    border: none;
+
+    border-radius: 20px;
+    box-shadow: inset -3px 3px 6px rgb(255, 255, 255), -3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+#InputArea input {
+    width: 75%;
+    font-size: 0.9em;
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#InputArea button {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: blueviolet;
+    border: none;
+
+    border-radius: 50%;
+    box-shadow: inset -3px 3px 6px rgb(158, 55, 255), -2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#container #condition {
+    height: 255px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#condition img{
+    height: 60px;
+}
+
+
+#condition #text {
+    margin: 0;
+}
+
+#condition h1 {
+    margin: 5px;
+    font-size: 3.3em;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#condition h3,
+#condition #min-max {
+    margin: 0;
+}
+
+#container #info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#info .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box .heading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.heading i{
+    margin-right: 7px;
+}
+
+@media (max-width: 380px) {
+
+    #container {
+        height: 90%;
+        width: 80%;
+        padding: 25px;
+    }
+}
