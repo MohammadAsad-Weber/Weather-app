@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.FnTpr0qrNzmgKfTnGojedQHaFj?rs=1&pid=ImgDetMain" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App by Mohammad Asad</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="container">
+
+            <div id="InputArea">
+                <input type="text" id="Search" placeholder="e.g. New York, US">
+                <button id="Btn"><i class='bx bx-search'></i></button>
+            </div>
+
+            <div id="condition">
+                <img >
+                <h3 id="Location" style="font-weight: 500;">---, --</h3>
+                <h1 id="temp" style="font-weight: 300;">--</h1>
+                <div id="text" style="font-weight: bold;">----</div>
+                <div id="min-max">
+                    <span id="max" style="font-weight: 500; margin: 0 10px;">H : --</span>
+                    <span id="min" style="font-weight: 500; margin: 0 10px;">L : --</span>
+                </div>
+            </div>
+
+            <div id="info">
+                <div class="box">
+                    <div class="heading">
+                        <i class='bx bx-water'></i>
+                        Humidity
+                    </div>
+                    <span id="Humidity">--</span>
+                </div>
+
+                <div class="box">
+                    <div class="heading">
+                        <i class='bx bx-wind'></i>
+                        Wind Speed
+                    </div>
+                    <span id="Speed">--</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
