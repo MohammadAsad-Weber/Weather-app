@@ -2,50 +2,82 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.FnTpr0qrNzmgKfTnGojedQHaFj?rs=1&pid=ImgDetMain" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon/favicon.jpg" type="image/x-icon">
+
+    <!-- StyleSheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Title -->
     <title>Weather App by Mohammad Asad</title>
 </head>
 
 <body>
 
-    <div id="wrapper">
-        <div id="container">
+    <!-- OUTER CONTAINER -->
+    <div id="outer-container">
 
-            <div id="InputArea">
-                <input type="text" id="Search" placeholder="e.g. New York, US">
-                <button id="Btn"><i class='bx bx-search'></i></button>
+        <!-- INNER CONTAINER -->
+        <div id="inner-container">
+
+            <!-- INPUT-AREA -->
+            <div id="input-area">
+
+                <!-- INPUT -->
+                <input type="text" id="prompt" placeholder="e.g. New York, US">
+
+                <!-- SEARCH BUTTON -->
+                <button id="search"><i class='bx bx-search'></i></button>
             </div>
 
-            <div id="condition">
-                <img >
-                <h3 id="Location" style="font-weight: 500;">---, --</h3>
-                <h1 id="temp" style="font-weight: 300;">--</h1>
-                <div id="text" style="font-weight: bold;">----</div>
-                <div id="min-max">
-                    <span id="max" style="font-weight: 500; margin: 0 10px;">H : --</span>
-                    <span id="min" style="font-weight: 500; margin: 0 10px;">L : --</span>
+            <!-- WEATHER INFORMATION -->
+            <div id="weather">
+
+                <!-- ICON -->
+                <img id="icon" src="" alt="" />
+
+                <!-- LOCATION -->
+                <h3 id="location">---, --</h3>
+
+                <!-- TEMPRATURE -->
+                <h1 id="temp">--</h1>
+
+                <!-- CONDITION -->
+                <div id="condition">----</div>
+
+                <!-- MIN-MAX -->
+                <div id="temp-range">
+                    <span id="max">H : --</span>
+                    <span id="min">L : --</span>
                 </div>
             </div>
 
-            <div id="info">
+            <!-- ATMOSPHERE -->
+            <div id="atmosphere">
+
+                <!-- HUMIDITY BOX -->
                 <div class="box">
                     <div class="heading">
                         <i class='bx bx-water'></i>
                         Humidity
                     </div>
-                    <span id="Humidity">--</span>
+                    <span id="humidity">--</span>
                 </div>
 
+                <!-- WIND SPEED BOX -->
                 <div class="box">
                     <div class="heading">
                         <i class='bx bx-wind'></i>
                         Wind Speed
                     </div>
-                    <span id="Speed">--</span>
+                    <span id="speed">--</span>
                 </div>
 
             </div>
