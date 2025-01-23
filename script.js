@@ -1,8 +1,11 @@
 import { apiKey } from './ApiKey.js' // API Key
 
 // Elements
+const outerContainer = document.getElementById(`outer-container`);
+const innerContainer = document.getElementById(`inner-container`);
 const input = document.getElementById(`prompt`);
 const search = document.getElementById(`search`);
+const icon = document.querySelector(`#icon`);
 const location = document.getElementById(`location`);
 const temp = document.getElementById(`temp`);
 const condition = document.getElementById(`condition`);
@@ -17,21 +20,21 @@ const Hour = new Date().getHours();
 // Change the Background according to the time of the day
 switch (true) {
     case (Hour >= 18):
-        document.getElementById(`outer-container`).style.background = `url(./assets/background/bg-dark.jpg) no-repeat fixed center`;
-        document.getElementById(`outer-container`).style.backgroundSize = `contain`;
-        document.getElementById(`inner-container`).style.background = `rgba(255, 255, 255, 0.1)`;
+        outerContainer.style.background = `url(./assets/background/bg-dark.jpg) no-repeat fixed center`;
+        outerContainer.style.backgroundSize = `contain`;
+        innerContainer.style.background = `rgba(255, 255, 255, 0.1)`;
         break
 
     case (Hour >= 6):
-        document.getElementById(`outer-container`).style.background = `url(./assets/background/bg-light.jpg) no-repeat fixed center`;
-        document.getElementById(`outer-container`).style.backgroundSize = `contain`;
-        document.getElementById(`inner-container`).style.background = `rgba(255, 255, 255, 0.3)`;
+        outerContainer.style.background = `url(./assets/background/bg-light.jpg) no-repeat fixed center`;
+        outerContainer.style.backgroundSize = `contain`;
+        innerContainer.style.background = `rgba(255, 255, 255, 0.3)`;
         break
 
     case (Hour >= 0):
-        document.getElementById(`outer-container`).style.background = `url(./assets/background/bg-dark.jpg) no-repeat fixed center`;
-        document.getElementById(`outer-container`).style.backgroundSize = `contain`;
-        document.getElementById(`inner-container`).style.background = `rgba(255, 255, 255, 0.1)`;
+        outerContainer.style.background = `url(./assets/background/bg-dark.jpg) no-repeat fixed center`;
+        outerContainer.style.backgroundSize = `contain`;
+        innerContainer.style.background = `rgba(255, 255, 255, 0.1)`;
         break
 }
 
@@ -51,45 +54,45 @@ async function getWeatherInfo(arg) {
             // Setting the icon according to the weather condition
             switch (condition.textContent) {
                 case `Clear`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Clear.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Clear Icon");
+                    icon.setAttribute("src", "./assets/icons/Clear.png");
+                    icon.setAttribute("alt", "Clear Icon");
                     break;
 
                 case `Clouds`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Clouds.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Clouds Icon");
+                    icon.setAttribute("src", "./assets/icons/Clouds.png");
+                    icon.setAttribute("alt", "Clouds Icon");
                     break;
 
                 case `Drizzle`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Drizzle.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Drizzle Icon");
+                    icon.setAttribute("src", "./assets/icons/Drizzle.png");
+                    icon.setAttribute("alt", "Drizzle Icon");
                     break;
 
                 case `Mist`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Mist.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Mist Icon");
+                    icon.setAttribute("src", "./assets/icons/Mist.png");
+                    icon.setAttribute("alt", "Mist Icon");
                     break;
 
                 case `Rain`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Rain.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Rain Icon");
+                    icon.setAttribute("src", "./assets/icons/Rain.png");
+                    icon.setAttribute("alt", "Rain Icon");
                     break;
 
                 case `Snow`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Snow.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Snow Icon");
+                    icon.setAttribute("src", "./assets/icons/Snow.png");
+                    icon.setAttribute("alt", "Snow Icon");
                     break;
 
                 case `Haze`:
-                    document.querySelector(`#icon`).setAttribute("src", "./assets/icons/Haze.png");
-                    document.querySelector(`#icon`).setAttribute("alt", "Haze Icon");
+                    icon.setAttribute("src", "./assets/icons/Haze.png");
+                    icon.setAttribute("alt", "Haze Icon");
                     break;
             }
 
             // Displaying the additional data
             max.textContent = `H : ${Math.floor(data.main.temp_max)} °C`;
             min.textContent = `L : ${Math.floor(data.main.temp_min)} °C`;
-            humidity.textContent = `${data.main.humidit}%`;
+            humidity.textContent = `${data.main.humidity}%`;
             speed.textContent = `${data.wind.speed} kmph`;
 
         }
@@ -103,7 +106,7 @@ async function getWeatherInfo(arg) {
 }
 
 // Displaying the weather info of Delhi by default
-document.addEventListener(`DOMContentLoaded`, getWeatherInfo("Delhi, India"));
+document.addEventListener(`DOMContentLoaded`, () => getWeatherInfo("Delhi, India"));
 
 // Event Listener for search button
 search.addEventListener('click', () => getWeatherInfo(input.value))
